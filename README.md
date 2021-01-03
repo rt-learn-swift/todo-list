@@ -11,3 +11,14 @@ Made from uDemy course The Complete Mac OS Developer Course.
 ## Where I left off
 
 Deletion of ToDo item
+
+
+## Project Details
+
+Project Type: Mac OS App
+XCode version: 12
+Interface: {Storyboard, SwiftUI, XIB}
+
+## Technologies Used
+
+- CoreData
