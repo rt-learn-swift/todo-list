@@ -12,6 +12,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var chkImportant: NSButton!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var buttonDelete: NSButton!
     
     var toDoItems: [ToDoItem] = []
     
@@ -58,14 +59,26 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         chkImportant.stringValue = "0"
     }
     
-    //    override var representedObject: Any? {
-//        didSet {
-//        // Update the view, if already loaded.
-//        }
-//    }
+    @IBAction func deleteClicked(_ sender: Any) {
+        let toDoItem = toDoItems[tableView.selectedRow]
+        
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+
+            context.delete(toDoItem)
+            appDelegate.saveAction(nil)
+            
+            getToDoItems()
+            buttonDelete.isHidden = true
+        }
+    }
     
     
     // MARK: Table View functions
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        buttonDelete.isHidden = false
+    }
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
         return toDoItems.count
     }

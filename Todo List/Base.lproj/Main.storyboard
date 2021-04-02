@@ -845,9 +845,21 @@
                                     <action selector="addClick:" target="XfG-lQ-9wD" id="nMX-DC-zgU"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-j5-7sN">
+                                <rect key="frame" x="261" y="13" width="206" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lza-wM-MyX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteClicked:" target="XfG-lQ-9wD" id="8Lo-bq-nIH"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="buttonDelete" destination="lwg-j5-7sN" id="C8J-n9-nKU"/>
                         <outlet property="chkImportant" destination="Z8e-lc-MEn" id="uMK-Lp-5Ji"/>
                         <outlet property="tableView" destination="p7d-gR-axl" id="Cjf-fa-wVI"/>
                         <outlet property="textField" destination="p3D-Ze-acF" id="yn4-jz-2Zk"/>
